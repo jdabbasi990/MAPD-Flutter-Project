@@ -9,7 +9,7 @@ class SpaceDrift extends FlameGame {
     await super.onLoad();
 
     add(BackGroundComponent());
-    add(SpaceShipComponent());
+    add(SpaceShipComponent(joystick: joystick));
     add(joystick);
   }
 }
