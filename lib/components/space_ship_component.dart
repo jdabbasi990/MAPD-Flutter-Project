@@ -1,12 +1,9 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:game_project/constants/globals.dart';
 import 'package:game_project/games/space_drift_game.dart';
 
-enum MovementState {
-  idle,
-  slideLeft,
-  slideRight,
-}
+enum MovementState { idle, slideLeft, slideRight, slideUp, slideDown }
 
 class SpaceShipComponent extends SpriteGroupComponent<MovementState>
     with HasGameRef<SpaceDrift> {
@@ -30,11 +27,15 @@ class SpaceShipComponent extends SpriteGroupComponent<MovementState>
     Sprite shipIdle = await gameRef.loadSprite(Globals.spaceShipSprite);
     Sprite shipLeftSlide = await gameRef.loadSprite(Globals.spaceShipLeft);
     Sprite shipRightSlide = await gameRef.loadSprite(Globals.spaceShipRight);
+    Sprite shipDownSlide = await gameRef.loadSprite(Globals.spaceShipDown);
+    Sprite shipUpSlide = await gameRef.loadSprite(Globals.spaceShipUp);
 
     sprites = {
       MovementState.idle: shipIdle,
       MovementState.slideLeft: shipLeftSlide,
       MovementState.slideRight: shipRightSlide,
+      MovementState.slideUp: shipUpSlide,
+      MovementState.slideDown: shipDownSlide
     };
 
     _rightBound = gameRef.size.x - 45;
@@ -48,6 +49,7 @@ class SpaceShipComponent extends SpriteGroupComponent<MovementState>
     height = _spriteHeight;
     width = 100;
     anchor = Anchor.center;
+    add(CircleHitbox());
   }
 
   @override
@@ -71,12 +73,19 @@ class SpaceShipComponent extends SpriteGroupComponent<MovementState>
       y = _downBound - 1;
     }
 
-    bool movingLeft = joystick.relativeDelta[0] < 0;
+    bool movingLeft = joystick.direction == JoystickDirection.left;
+    bool movingRight = joystick.direction == JoystickDirection.right;
+    bool movingUp = joystick.direction == JoystickDirection.up;
+    bool movingDown = joystick.direction == JoystickDirection.down;
 
     if (movingLeft) {
       current = MovementState.slideLeft;
-    } else {
+    } else if (movingRight) {
       current = MovementState.slideRight;
+    } else if (movingUp) {
+      current = MovementState.slideUp;
+    } else if (movingDown) {
+      current = MovementState.slideDown;
     }
 
     position.add(joystick.relativeDelta * _speed * dt);

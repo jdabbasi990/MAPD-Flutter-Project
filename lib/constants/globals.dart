@@ -6,6 +6,12 @@ class Globals {
   static const String spaceShipLeft = 'space-ship-leftSlide.png';
   static const String spaceShipRight = 'space-ship-rightSlide.png';
   static const String spaceShipDown = 'space-ship-downSlide.png';
+  static const String spaceShipUp = 'space-ship.png';
+  static const String flameSprite = 'flame.png';
+  static const String phantomSprite = 'phantommorph.png';
 
   // static const String backgroundSprite = 'background1080x1920.png';
+
+  //sounds
+  static const String itemGrabSound = 'slide.mp3';
 }
