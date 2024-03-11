@@ -21,9 +21,7 @@ class SpaceDrift extends FlameGame with HasCollisionDetection {
 
     add(joystick);
 
-    FlameAudio.audioCache.loadAll([
-      Globals.itemGrabSound,
-    ]);
+    FlameAudio.audioCache.loadAll([Globals.itemGrabSound, Globals.screamSound]);
 
     add(PhantomComponent(startPosition: Vector2(200, 200)));
     add(PhantomComponent(startPosition: Vector2(size.x - 200, size.y - 200)));

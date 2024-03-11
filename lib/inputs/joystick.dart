@@ -6,5 +6,5 @@ JoystickComponent joystick = JoystickComponent(
     knob: CircleComponent(
         radius: 30, paint: BasicPalette.red.withAlpha(200).paint()),
     background: CircleComponent(
-        radius: 100, paint: BasicPalette.red.withAlpha(100).paint()),
+        radius: 70, paint: BasicPalette.red.withAlpha(100).paint()),
     margin: const EdgeInsets.only(left: 40, bottom: 40));

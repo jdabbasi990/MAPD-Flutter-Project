@@ -3,7 +3,7 @@ import 'package:flame/components.dart';
 import 'package:game_project/constants/globals.dart';
 import 'package:game_project/games/space_drift_game.dart';
 
-enum MovementState { idle, slideLeft, slideRight, slideUp, slideDown }
+enum MovementState { idle, slideLeft, slideRight, slideUp, slideDown, frozen }
 
 class SpaceShipComponent extends SpriteGroupComponent<MovementState>
     with HasGameRef<SpaceDrift> {
