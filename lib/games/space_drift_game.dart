@@ -1,3 +1,4 @@
+import 'package:flame/collisions.dart';
 import 'package:flame/game.dart';
 import 'package:flame_audio/flame_audio.dart';
 import 'package:game_project/components/background_component.dart';
@@ -26,5 +27,7 @@ class SpaceDrift extends FlameGame with HasCollisionDetection {
 
     add(PhantomComponent(startPosition: Vector2(200, 200)));
     add(PhantomComponent(startPosition: Vector2(size.x - 200, size.y - 200)));
+
+    add(ScreenHitbox());
   }
 }

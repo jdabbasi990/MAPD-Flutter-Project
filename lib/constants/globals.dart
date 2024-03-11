@@ -14,4 +14,5 @@ class Globals {
 
   //sounds
   static const String itemGrabSound = 'slide.mp3';
+  static const String screamSound = 'scream.mp3';
 }
