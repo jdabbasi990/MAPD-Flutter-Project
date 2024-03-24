@@ -10,8 +10,8 @@ import 'package:game_project/games/space_drift_game.dart';
 class FlamePointComponent extends SpriteComponent
     with HasGameRef<SpaceDrift>, CollisionCallbacks {
   final double _spriteHeight = 50;
-
   final Random _random = Random();
+
   @override
   Future<void> onLoad() async {
     await super.onLoad();
@@ -34,6 +34,9 @@ class FlamePointComponent extends SpriteComponent
 
       removeFromParent();
       gameRef.score += 1;
+
+      // Update score on screen
+      gameRef.updateScoreText();
 
       gameRef.add(FlamePointComponent());
     }
