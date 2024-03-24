@@ -39,7 +39,7 @@ class SpaceShipComponent extends SpriteGroupComponent<MovementState>
     };
 
     _rightBound = gameRef.size.x - 45;
-    _leftBound = -45;
+    _leftBound = -10;
     _upBound = 55;
     _downBound = gameRef.size.y - 85;
 
