@@ -7,6 +7,8 @@ class Globals {
   static const String spaceShipRight = 'space-ship-rightSlide.png';
   static const String spaceShipDown = 'space-ship-downSlide.png';
   static const String spaceShipUp = 'space-ship.png';
+  static const String freezShipUp = 'freez.png';
+
   static const String flameSprite = 'flame.png';
   static const String phantomSprite = 'phantommorph.png';
 
