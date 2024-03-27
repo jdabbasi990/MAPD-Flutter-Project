@@ -1,9 +1,15 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:game_project/games/space_drift_game.dart';
+import 'package:game_project/welcome-screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(GameWidget(game: SpaceDrift()));
+  runApp(MaterialApp(
+    home: WelcomeScreen(),
+    routes: {
+      '/game': (context) => GameWidget(game: SpaceDrift()),
+    },
+  ));
 }

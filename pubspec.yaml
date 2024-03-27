@@ -24,3 +24,10 @@ flutter:
   assets:
     - assets/audio/
     - assets/images/
+
+  fonts:             
+    - family: SpaceCrusaders
+      fonts:
+        - asset: fonts/SpaceCrusaders-Regular.ttf
+        - asset: fonts/SpaceCrusadersItalic-Italic.ttf
+          style: italic  

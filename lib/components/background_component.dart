@@ -7,7 +7,7 @@ class BackGroundComponent extends SpriteComponent with HasGameRef<SpaceDrift> {
   Future<void> onLoad() async {
     await super.onLoad();
 
-    sprite = await gameRef.loadSprite(Globals.backgroundSprite);
+    sprite = await gameRef.loadSprite(Globals.backgroundSprite1);
     size = gameRef.size;
   }
 }

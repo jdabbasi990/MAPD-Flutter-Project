@@ -2,6 +2,8 @@ class Globals {
   Globals._();
 
   static const String backgroundSprite = 'background1920x1080.png';
+  static const String backgroundSprite1 = 'bg1.jpg';
+
   static const String spaceShipSprite = 'space-ship.png';
   static const String spaceShipLeft = 'space-ship-leftSlide.png';
   static const String spaceShipRight = 'space-ship-rightSlide.png';
