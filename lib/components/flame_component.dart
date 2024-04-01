@@ -35,6 +35,10 @@ class FlamePointComponent extends SpriteComponent
       removeFromParent();
       gameRef.score += 1;
 
+      if (gameRef.score == 3) {
+        gameRef.add(PhantomComponent(startPosition: Vector2(100, 100)));
+      }
+
       // Update score on screen
       gameRef.updateScoreText();
 
