@@ -12,7 +12,9 @@ import 'package:game_project/inputs/joystick.dart';
 
 class SpaceDrift extends FlameGame with HasCollisionDetection {
   int score = 0;
+  int level = 1;
   late TextComponent scoreText;
+  late TextComponent levelText;
   @override
   Future<void> onLoad() async {
     await super.onLoad();
@@ -39,9 +41,19 @@ class SpaceDrift extends FlameGame with HasCollisionDetection {
     );
     add(scoreText);
 
+    levelText = TextComponent(
+      text: 'Level: $level',
+      position: Vector2(650,10),
+    );
+    add(levelText);
+
   }
   void updateScoreText() {
     scoreText.text = 'Score: $score';
+  }
+
+  void updateLevelText(){
+    levelText.text = 'Level: $level';
   }
   }
 

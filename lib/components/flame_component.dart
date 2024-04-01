@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame_audio/flame_audio.dart';
+import 'package:game_project/components/phantom_component.dart';
 import 'package:game_project/components/space_ship_component.dart';
 import 'package:game_project/constants/globals.dart';
 import 'package:game_project/games/space_drift_game.dart';
@@ -39,6 +40,13 @@ class FlamePointComponent extends SpriteComponent
         gameRef.add(PhantomComponent(startPosition: Vector2(100, 100)));
       }
 
+      if (gameRef.score == 5){
+        gameRef.add(PhantomComponent(startPosition: Vector2(100, 100)));
+        gameRef.score = 0;
+        gameRef.level +=1;
+      }
+
+      gameRef.updateLevelText();
       // Update score on screen
       gameRef.updateScoreText();
 
