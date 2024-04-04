@@ -1,4 +1,4 @@
-# game_project
+# Space Drift
 
 A new Flutter project.
 
