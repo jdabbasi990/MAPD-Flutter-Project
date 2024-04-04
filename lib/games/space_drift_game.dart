@@ -89,6 +89,6 @@ class SpaceDrift extends FlameGame with HasCollisionDetection {
 
   void reset() {
     score = 0;
-    _remainingTime = 30;
+    _remainingTime = 120;
   }
 }
