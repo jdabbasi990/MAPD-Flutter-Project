@@ -1,7 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audioplayers.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  late AudioPlayer audioPlayer = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    // playBackgroundMusic();
+  }
+
+  Future<void> playBackgroundMusic() async {
+    audioPlayer = AudioPlayer();
+    await audioPlayer.setSourceAsset('audio/BG_Music.mp3');
+    audioPlayer.setReleaseMode(ReleaseMode.loop);
+    audioPlayer.resume();
+  }
+
+  @override
+  void dispose() {
+    audioPlayer.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +51,6 @@ class WelcomeScreen extends StatelessWidget {
                   'Space Drift',
                   style: TextStyle(
                       fontSize: 120,
-                      // color: Color.fromARGB(255, 204, 0, 255),
                       color: Color.fromARGB(255, 255, 174, 0),
                       fontFamily: 'SpaceCrusaders'),
                 ),
@@ -33,6 +59,8 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    audioPlayer.stop();
+
                     Navigator.pushNamed(context, '/game');
                   },
                   child: const Text(
