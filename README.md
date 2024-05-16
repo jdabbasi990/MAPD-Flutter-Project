@@ -1,4 +1,4 @@
-# Space Drift (Game developed using Flutter Flame engine)
+# Space Drift (Game developed using Flutter Flame 🔥 engine)
 
 ## Installation instructions
 - Git clone project
